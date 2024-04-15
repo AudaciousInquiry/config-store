@@ -38,7 +38,7 @@ import javax.persistence.TemporalType;
 public class Setting 
 {
     private String name;
-    private String value;
+    private String settingValue;
     private long id;
     private Calendar createTime;
     private Calendar updateTime;
@@ -69,19 +69,19 @@ public class Setting
      * 
      * @return the value of the setting.
      */
-    @Column(name = "value", length=4096)
-    public String getValue() {
-        return value;
+    @Column(name = "setting_value", length=4096)
+    public String getSettingValue() {
+        return settingValue;
     }
 
     /**
      * Set the name of the setting.
      * 
-     * @param name
+     * @param value
      *            The value of setting.
      */
-    public void setValue(String value) {
-        this.value = value;
+    public void setSettingValue(String value) {
+        this.settingValue = value;
     }      
     
     /**

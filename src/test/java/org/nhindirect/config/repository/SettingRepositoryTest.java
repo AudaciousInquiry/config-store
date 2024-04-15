@@ -24,7 +24,7 @@ public class SettingRepositoryTest extends SpringBaseTest
 	{
 		final Setting retVal = new Setting();
 		retVal.setName(name);
-		retVal.setValue(value);
+		retVal.setSettingValue(value);
 		retVal.setStatus(EntityStatus.ENABLED);
 		retVal.setUpdateTime(Calendar.getInstance());
 		retVal.setUpdateTime(Calendar.getInstance());
@@ -115,7 +115,7 @@ public class SettingRepositoryTest extends SpringBaseTest
 		assertEquals(1, settings.size());
 		Setting setting = settings.iterator().next();
 		assertEquals("TestName1",  setting.getName());
-		assertEquals("TestValue1",  setting.getValue());
+		assertEquals("TestValue1",  setting.getSettingValue());
 		
 		
 		settings = repo.findByNameIgnoreCaseIn(Arrays.asList("TestNAme2".toUpperCase()));
@@ -123,7 +123,7 @@ public class SettingRepositoryTest extends SpringBaseTest
 		assertEquals(1, settings.size());
 		setting = settings.iterator().next();
 		assertEquals("TestName2",  setting.getName());
-		assertEquals("TestValue2",  setting.getValue());
+		assertEquals("TestValue2",  setting.getSettingValue());
 		
 		
 		settings = repo.findByNameIgnoreCaseIn(Arrays.asList("TestName1".toUpperCase(), "TestName2".toUpperCase()));
